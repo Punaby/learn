@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Proxy Browser</title>
+  <style>
+    #addressBar { width: 80%; }
+    #goBtn { width: 10%; }
+    iframe { width: 100%; height: 80vh; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <input id="addressBar" value="https://example.com">
+  <button id="goBtn">Go</button>
+  <iframe id="browserFrame" src="http://localhost:3000/proxy/https://example.com"></iframe>
+  <script>
+    const addressBar = document.getElementById('addressBar');
+    const browserFrame = document.getElementById('browserFrame');
+    document.getElementById('goBtn').onclick = function() {
+      let url = addressBar.value;
+      if (!url.startsWith('http')) url = 'https://' + url;
+      browserFrame.src = 'http://localhost:3000/proxy/' + url;
+    }
+  </script>
+</body>
+</html>
