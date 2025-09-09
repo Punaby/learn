@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Browser in a Browser</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    height: 100%;
+}
+.browser-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.address-bar-container {
+    display: flex;
+    padding: 10px;
+    background: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+#url-input {
+    flex-grow: 1;
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.address-bar-container button {
+    padding: 5px 15px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+}
+#web-frame {
+    flex-grow: 1;
+    border: none;
+}
+
+    </style>
 </head>
 <body>
     <div class="browser-container">
